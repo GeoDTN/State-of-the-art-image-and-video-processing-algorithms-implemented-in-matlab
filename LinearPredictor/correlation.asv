@@ -1,0 +1,8 @@
+function y = correlation(t)
+% Correlation by svane
+% Correlations of sequences Correlation is an operation used in many
+% applications in digital signal processing. It is a measure of the degree to
+% which two sequences are similar. Given two real-valued sequences x(n) and
+% y(n) of finite energy.
+y = zeros(size(t));
+y(find(abs(t)< 1/2))= 1;

@@ -1,0 +1,31 @@
+% YCBCR: image to convert
+% YCbCrTOrgb: convert matrix
+
+function result = fromYCBCRtoRGB (YCBCR, YCbCrTOrgb)
+
+%component
+Y = YCBCR(:,:,1);
+Cb = YCBCR(:,:,2);
+Cr = YCBCR(:,:,3);
+
+%Cast operation
+Y = double (Y);
+Cb = double (Cb);
+Cr = double (Cr);
+
+%Convertion
+Y = rgbTOYCbCr(1,1) * R + rgbTOYCbCr(1,2) * G + rgbTOYCbCr(1,3) * B + 0;
+Cb = rgbTOYCbCr(2,1) * R + rgbTOYCbCr(2,2) * G + rgbTOYCbCr(2,3) * B + 128;
+Cr = rgbTOYCbCr(3,1) * R + rgbTOYCbCr(3,2) * G + rgbTOYCbCr(3,3) * B + 128;
+
+%Cast operation
+Y = uint8 (Y);
+Cb = double (Cb);
+Cr = double (Cr);
+
+YCBCR = RGB;
+YCBCR(:,:,1) = Y;
+YCBCR(:,:,2) = Cb;
+YCBCR(:,:,3) = Cr;
+
+result = YCBCR;
