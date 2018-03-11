@@ -1,5 +1,5 @@
 function Cor = correlation(I,Row)
-% pixel Correlation along a specified row (by svane)
+% pixel Correlation along a specified row 
 % Correlations of sequences Correlation is an operation used in many
 % applications in digital signal processing. It is a measure of the degree to
 % which two sequences are similar. Given two real-valued sequences x(n) and
